@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --accent-h: 221;
+  --accent-s: 83%;
+  --accent-l: 53%;
+}
+
+.dark {
+  --bg-body: #020617;
+  --bg-card: #0f172a;
+  --bg-input: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border: #1e293b;
+  --border-light: #334155;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  --accent-h: 201;
+  --accent-s: 96%;
+  --accent-l: 70%;
+}
+
+*, *::before, *::after {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              transform 0.2s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  min-height: 100dvh;
+}
+
+.bg-primary {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+
+.dark .bg-primary {
+  background-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 10%));
+}
